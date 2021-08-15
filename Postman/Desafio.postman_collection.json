@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "c1b556ba-adfb-4ebd-890d-ef70c7d8c5c8",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Authentication - OK",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"hulk\",\r\n    \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58989/api/authentication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58989",
+							"path": [
+								"api",
+								"authentication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication - Usuario nao encontrado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"usuario\",\r\n    \"senha\": \"senha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58989/api/authentication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58989",
+							"path": [
+								"api",
+								"authentication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication - Request inválido",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"\",\r\n    \"senha\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58989/api/authentication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58989",
+							"path": [
+								"api",
+								"authentication"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ValidPassword",
+			"item": [
+				{
+					"name": "ValidatePassword - OK",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkJlYXJlciJ9.eyJ1bmlxdWVfbmFtZSI6Imh1bGsiLCJlbWFpbCI6Imh1bGtAaHVsay5jb20iLCJuYmYiOjE2MjkwNjY5NjIsImV4cCI6MTYyOTA2NzI2MiwiaWF0IjoxNjI5MDY2OTYyfQ.NPmmTAMZDKVMaXNiJBrDTPfhVWwMHTxBSHQRcejKhK4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Senha\" : \"Kx1m8xh#W7!E!7A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58989/api/validate-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58989",
+							"path": [
+								"api",
+								"validate-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidatePassword - Invalida",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkJlYXJlciJ9.eyJ1bmlxdWVfbmFtZSI6Imh1bGsiLCJlbWFpbCI6Imh1bGtAaHVsay5jb20iLCJuYmYiOjE2MjkwNjY5NjIsImV4cCI6MTYyOTA2NzI2MiwiaWF0IjoxNjI5MDY2OTYyfQ.NPmmTAMZDKVMaXNiJBrDTPfhVWwMHTxBSHQRcejKhK4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Senha\" : \"Kx1m8xhW7E7A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:58989/api/validate-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58989",
+							"path": [
+								"api",
+								"validate-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreatePassword",
+			"item": [
+				{
+					"name": "CreatePassword - OK",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkJlYXJlciJ9.eyJ1bmlxdWVfbmFtZSI6Imh1bGsiLCJlbWFpbCI6Imh1bGtAaHVsay5jb20iLCJuYmYiOjE2MjkwNjY5NjIsImV4cCI6MTYyOTA2NzI2MiwiaWF0IjoxNjI5MDY2OTYyfQ.NPmmTAMZDKVMaXNiJBrDTPfhVWwMHTxBSHQRcejKhK4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:58989/api/create-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "58989",
+							"path": [
+								"api",
+								"create-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
